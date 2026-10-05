@@ -5,23 +5,23 @@ git commit -m "init config"
 Bước 2: Tạo nhánh feature-api và phát triển các commit mớiTạo nhánh feature-api và thực hiện 2 commit chỉnh sửa config.json:Bashgit checkout -b feature-api
 
 # Commit 1: Đổi port thành 9000
-# Sửa config.json thành: {"port": 9000, "debug": false}
+Sửa config.json thành: {"port": 9000, "debug": false}
 git add config.json
 git commit -m "feat: change port"
 
 # Commit 2: Bật chế độ debug
-# Sửa config.json thành: {"port": 9000, "debug": true}
+Sửa config.json thành: {"port": 9000, "debug": true}
 git add config.json
 git commit -m "feat: enable debug"
 Bước 3: Giả lập các commit mới trên nhánh mainChuyển về nhánh main và thực hiện 2 commit chỉnh sửa đè lên cùng các thông số tệp config.json:Bashgit checkout main
 
 # Commit 1: Cập nhật port trên main
-# Sửa config.json thành: {"port": 8081, "debug": false}
+Sửa config.json thành: {"port": 8081, "debug": false}
 git add config.json
 git commit -m "update port on main"
 
 # Commit 2: Thêm cấu hình môi trường env
-# Sửa config.json thành: {"port": 8081, "debug": false, "env": "production"}
+Sửa config.json thành: {"port": 8081, "debug": false, "env": "production"}
 git add config.json
 git commit -m "add env config"
 Bước 4: Thực hiện git rebase main và xử lý từng chặng conflictQuay lại nhánh feature-api và tiến hành rebase:   Bashgit checkout feature-api
